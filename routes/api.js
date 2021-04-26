@@ -7,7 +7,7 @@ router.get('/api/v1/test', (req, res) => {
 
 
 router.get('/api/v1/blink', (req, res) => {
-    blinker.blinkLED()
+    blinker.pressButton()
 })
 
 router.get('/api/v1/stopblink', (req, res) => {

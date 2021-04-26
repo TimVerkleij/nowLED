@@ -13,9 +13,21 @@ function blinkLED() { //function to start blinking
 function endBlink() { //function to stop blinking
     //clearInterval(blinkInterval); // Stop blink intervals
     LED.writeSync(0); // Turn LED off
-    LED.unexport(); // Unexport GPIO to free resources
+    //LED.unexport(); // Unexport GPIO to free resources
+}
+
+function pressButton() {
+    LED.writeSync(1);
+    await sleep(100);
+    LED.writeSync(0);
+}
+
+function sleep(ms) {
+    return new Promise((resolve) => {
+        setTimeout(resolve, ms);
+    });
 }
 
 //setTimeout(endBlink, 5000); //stop blinking after 5 seconds
 
-module.exports = {blinkLED, endBlink}
+module.exports = {blinkLED, endBlink, pressButton}
