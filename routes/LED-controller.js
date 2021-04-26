@@ -3,6 +3,11 @@ var backwards = new Gpio(2, 'out'); //use GPIO pin 4, and specify that it is out
 var forwards = new Gpio(3, 'out');
 var start = new Gpio(4, 'out');
 var reset = new Gpio(17, 'out');
+
+backwards.writeSync(0);
+forwards.writeSync(0);
+start.writeSync(0);
+reset.writeSync(0);
 //var blinkInterval = setInterval(blinkLED, 250); //run the blinkLED function every 250ms
 
 // function blinkLED() { //function to start blinking
