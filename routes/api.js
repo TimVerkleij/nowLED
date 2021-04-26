@@ -8,6 +8,7 @@ router.get('/api/v1/test', (req, res) => {
 
 router.get('/api/v1/blink', (req, res) => {
     blinker.pressButton()
+    res.send('Look at your beautiful lights!')
 })
 
 router.get('/api/v1/stopblink', (req, res) => {
