@@ -16,7 +16,7 @@ function endBlink() { //function to stop blinking
     //LED.unexport(); // Unexport GPIO to free resources
 }
 
-function pressButton() {
+async function pressButton() {
     LED.writeSync(1);
     await sleep(100);
     LED.writeSync(0);
