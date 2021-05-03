@@ -8,7 +8,7 @@ router.get('/api/v1/test', (req, res) => {
 
 router.get('/api/v1/startstop', (req, res) => {
     ledController.startStop()
-    res.send('Look at your beautiful lights!')
+    res.json('Look at your beautiful lights!')
 })
 
 router.get('/api/v1/forwards', (req, res) => {
