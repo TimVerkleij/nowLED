@@ -13,17 +13,17 @@ router.get('/api/v1/startstop', (req, res) => {
 
 router.get('/api/v1/forwards', (req, res) => {
     ledController.next()
-    res.send('Next Mode!')
+    res.json('Next Mode!')
 })
 
 router.get('/api/v1/backwards', (req, res) => {
     ledController.previous()
-    res.send('Previous Mode!')
+    res.json('Previous Mode!')
 })
 
 router.get('/api/v1/reset', (req, res) => {
     ledController.restart()
-    res.send('Lights have been reset!')
+    res.json('Lights have been reset!')
 })
 
 module.exports = router
