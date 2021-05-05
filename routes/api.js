@@ -1,5 +1,6 @@
 const router = require('express').Router()
 const ledController = require('./LED-controller')
+const modeSwitcher = require('./modeSwitcher')
 
 router.get('/api/v1/test', (req, res) => {
     res.send('hello!')
@@ -13,17 +14,20 @@ router.get('/api/v1/startstop', (req, res) => {
 
 router.get('/api/v1/forwards', (req, res) => {
     ledController.next()
-    res.json('Next Mode!')
+    let mode = modeSwitcher.next()
+    res.json(mode)
 })
 
 router.get('/api/v1/backwards', (req, res) => {
     ledController.previous()
-    res.json('Previous Mode!')
+    let mode = modeSwitcher.previous()
+    res.json(mode)
 })
 
 router.get('/api/v1/reset', (req, res) => {
     ledController.restart()
-    res.json('Lights have been reset!')
+    let mode = modeSwitcher.reset()
+    res.json(mode)
 })
 
 module.exports = router
