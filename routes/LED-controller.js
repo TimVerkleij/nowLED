@@ -7,7 +7,7 @@ var reset = new Gpio(17, 'out');
 backwards.writeSync(0);
 forwards.writeSync(0);
 start.writeSync(0);
-reset.writeSync(0);
+reset.writeSync(1);
 //var blinkInterval = setInterval(blinkLED, 250); //run the blinkLED function every 250ms
 
 // function blinkLED() { //function to start blinking
@@ -43,9 +43,9 @@ async function previous() {
 }
 
 async function restart(){
-    reset.writeSync(1);
-    await sleep(100);
     reset.writeSync(0);
+    await sleep(100);
+    reset.writeSync(1);
 }
 
 function sleep(ms) {
