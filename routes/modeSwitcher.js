@@ -37,4 +37,4 @@ function reset() {
     return modesArray[currentModeIndex]
 }
 
-module.export = {next, previous, reset} 
+module.exports = {next, previous, reset} 
