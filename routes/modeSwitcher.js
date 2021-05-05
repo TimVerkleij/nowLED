@@ -18,7 +18,7 @@ function next() {
     } else {
         currentModeIndex++
     }
-    console.log(currentModeIndex)
+    
     return modesArray[currentModeIndex]
 }
 
