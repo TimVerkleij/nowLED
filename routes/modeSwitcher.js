@@ -1,13 +1,13 @@
 let modesArray = [
-    "breathing blue",
-    "slow(er) rainbow",
-    "fast(er) rainbow",
-    "red",
-    "green",
-    "blue",
-    "traveling blue",
-    "traveling rainbow (short)",
-    "traveling rainbow (full)"
+    "Breathing Blue",
+    "Slow Rainbow",
+    "Fast Rainbow",
+    "Red",
+    "Green",
+    "Blue",
+    "Traveling Blue",
+    "Traveling Rainbow",
+    "Rainbow Wave"
 ]
 
 let currentModeIndex = 0
@@ -18,7 +18,7 @@ function next() {
     } else {
         currentModeIndex++
     }
-    
+
     return modesArray[currentModeIndex]
 }
 
