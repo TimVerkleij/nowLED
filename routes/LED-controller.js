@@ -4,9 +4,9 @@ var forwards = new Gpio(3, 'out');
 var start = new Gpio(4, 'out');
 var reset = new Gpio(17, 'out');
 
-backwards.writeSync(0);
-forwards.writeSync(0);
-start.writeSync(0);
+backwards.writeSync(1);
+forwards.writeSync(1);
+start.writeSync(1);
 reset.writeSync(1);
 //var blinkInterval = setInterval(blinkLED, 250); //run the blinkLED function every 250ms
 
@@ -25,21 +25,21 @@ reset.writeSync(1);
 // }
 
 async function startStop(){
-    start.writeSync(1);
-    await sleep(100);
     start.writeSync(0);
+    await sleep(100);
+    start.writeSync(1);
 }
 
 async function next() {
-    forwards.writeSync(1);
-    await sleep(100);
     forwards.writeSync(0);
+    await sleep(100);
+    forwards.writeSync(1);
 }
 
 async function previous() {
-    backwards.writeSync(1);
-    await sleep(100);
     backwards.writeSync(0);
+    await sleep(100);
+    backwards.writeSync(1);
 }
 
 async function restart(){
