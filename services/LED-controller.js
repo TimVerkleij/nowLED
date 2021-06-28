@@ -8,21 +8,6 @@ backwards.writeSync(1);
 forwards.writeSync(1);
 start.writeSync(1);
 reset.writeSync(1);
-//var blinkInterval = setInterval(blinkLED, 250); //run the blinkLED function every 250ms
-
-// function blinkLED() { //function to start blinking
-//     if (LED.readSync() === 0) { //check the pin state, if the state is 0 (or off)
-//         LED.writeSync(1); //set pin state to 1 (turn LED on)
-//     } else {
-//         LED.writeSync(0); //set pin state to 0 (turn LED off)
-//     }
-// }
-
-// function endBlink() { //function to stop blinking
-//     //clearInterval(blinkInterval); // Stop blink intervals
-//     LED.writeSync(0); // Turn LED off
-//     //LED.unexport(); // Unexport GPIO to free resources
-// }
 
 async function startStop(){
     start.writeSync(0);
@@ -53,7 +38,5 @@ function sleep(ms) {
         setTimeout(resolve, ms);
     });
 }
-
-//setTimeout(endBlink, 5000); //stop blinking after 5 seconds
 
 module.exports = {previous, next, startStop, restart}

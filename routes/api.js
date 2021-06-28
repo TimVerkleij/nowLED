@@ -1,11 +1,10 @@
 const router = require('express').Router()
-const ledController = require('./LED-controller')
-const modeSwitcher = require('./modeSwitcher')
+const ledController = require('../services/LED-controller')
+const modeSwitcher = require('../services/modeSwitcher')
 
 router.get('/api/v1/test', (req, res) => {
     res.send('hello!')
 })
-
 
 router.get('/api/v1/startstop', (req, res) => {
     ledController.startStop()
